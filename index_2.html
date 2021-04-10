@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 140px;
+            height: 70px;
+            border-width: 2px 2px 72px 2px;
+            border-style: solid;
+            border-color: black;
+            margin: 100px auto;
+            border-radius: 50%;
+            animation: rotate 1s linear infinite;
+        }
+        
+        .box::before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            position: absolute;
+            top: 50%;
+            border: 20px solid #fff;
+            border-radius: 50%;
+        }
+        
+        .box::after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            border: 20px solid black;
+            border-radius: 50%;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .box:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+</body>
+
+</html>
